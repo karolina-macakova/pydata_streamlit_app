@@ -4,7 +4,7 @@ import streamlit as st
 
 
 def app():
-    st.title("PyDataLadies Dashboard")
+    st.title("PyDataLadies Dashboard Homework")
     # vstup 1: výběr datové sady
     data_file_path = st.file_uploader("Data file")
 
@@ -28,7 +28,7 @@ def app():
     # výběr sloupce pro zobrazení rozdělení dat
     interesting_column = st.selectbox("Interesting column", data.columns)
     # výběr funkce pro zobrazení rozdělovací funkce
-    dist_plot = st.selectbox("Plot type", [px.box, px.histogram, px.violin])
+    dist_plot = st.radio("Plot type", [px.box, px.histogram, px.violin])
 
     st.write(dist_plot(data, x=interesting_column, color=color))
 
